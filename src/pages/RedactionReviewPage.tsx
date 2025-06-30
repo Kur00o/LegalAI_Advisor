@@ -167,21 +167,21 @@ export function RedactionReviewPage({ onBack, country }: RedactionReviewPageProp
 
   const getRiskColor = (level: string) => {
     switch (level) {
-      case 'LOW': return 'text-emerald border-emerald/20 bg-emerald/10';
-      case 'MEDIUM': return 'text-deep-bronze border-deep-bronze/20 bg-deep-bronze/10';
-      case 'HIGH': return 'text-legal-red border-legal-red/20 bg-legal-red/10';
-      case 'CRITICAL': return 'text-legal-red border-legal-red/20 bg-legal-red/20';
-      default: return 'text-cool-gray border-cool-gray/20 bg-cool-gray/10';
+      case 'LOW': return 'text-emerald border-emerald/30 bg-emerald/20';
+      case 'MEDIUM': return 'text-deep-bronze border-deep-bronze/30 bg-deep-bronze/20';
+      case 'HIGH': return 'text-legal-red border-legal-red/30 bg-legal-red/20';
+      case 'CRITICAL': return 'text-legal-red border-legal-red/30 bg-legal-red/30';
+      default: return 'text-cool-gray border-cool-gray/30 bg-cool-gray/20';
     }
   };
 
   const getRedactionTypeColor = (riskLevel: string) => {
     switch (riskLevel) {
-      case 'LOW': return 'text-emerald border-emerald/20 bg-emerald/10';
-      case 'MEDIUM': return 'text-deep-bronze border-deep-bronze/20 bg-deep-bronze/10';
-      case 'HIGH': return 'text-legal-red border-legal-red/20 bg-legal-red/10';
-      case 'CRITICAL': return 'text-legal-red border-legal-red/20 bg-legal-red/20';
-      default: return 'text-cool-gray border-cool-gray/20 bg-cool-gray/10';
+      case 'LOW': return 'text-emerald border-emerald/30 bg-emerald/20';
+      case 'MEDIUM': return 'text-deep-bronze border-deep-bronze/30 bg-deep-bronze/20';
+      case 'HIGH': return 'text-legal-red border-legal-red/30 bg-legal-red/20';
+      case 'CRITICAL': return 'text-legal-red border-legal-red/30 bg-legal-red/30';
+      default: return 'text-cool-gray border-cool-gray/30 bg-cool-gray/20';
     }
   };
 
@@ -304,14 +304,14 @@ export function RedactionReviewPage({ onBack, country }: RedactionReviewPageProp
                 </div>
 
                 {showDocumentPreview && (
-                  <div className="bg-white/5 border border-white/20 rounded-lg p-4 max-h-64 overflow-y-auto custom-scrollbar backdrop-blur-sm">
-                    <div className="text-sm text-gray-300 whitespace-pre-wrap text-enhanced-contrast">
+                  <div className="bg-white/10 border border-white/30 rounded-lg p-4 max-h-64 overflow-y-auto custom-scrollbar backdrop-blur-sm">
+                    <div className="text-sm text-white/90 whitespace-pre-wrap text-enhanced-contrast">
                       {documentContent.substring(0, 2000) + (documentContent.length > 2000 ? '...' : '')}
                     </div>
                   </div>
                 )}
 
-                <div className="flex items-center justify-between p-3 bg-orange-500/10 border border-orange-500/20 rounded-lg mt-4 backdrop-blur-sm">
+                <div className="flex items-center justify-between p-3 bg-orange-500/20 border border-orange-500/30 rounded-lg mt-4 backdrop-blur-sm">
                   <div className="flex items-center space-x-3">
                     <CheckCircle className="h-5 w-5 text-orange-400" />
                     <div>
@@ -357,26 +357,26 @@ export function RedactionReviewPage({ onBack, country }: RedactionReviewPageProp
 
           {/* Analysis Results */}
           {analysisResult && (
-            <div className="bg-white/5 backdrop-blur-xl rounded-xl shadow-sm border border-white/10 p-6">
+            <div className="bg-white/10 backdrop-blur-xl rounded-xl shadow-sm border border-white/20 p-6">
               <h2 className="text-xl font-semibold text-white mb-6 text-enhanced-contrast">Redaction Analysis Results</h2>
 
               {/* Redaction Detection Summary */}
               <div className="mb-6">
                 <h3 className="text-lg font-semibold text-white mb-3 text-enhanced-contrast">Redaction Detection</h3>
                 <div className="grid md:grid-cols-3 gap-4">
-                  <div className="bg-orange-500/10 border border-orange-500/20 rounded-lg p-4">
+                  <div className="bg-orange-500/20 border border-orange-500/30 rounded-lg p-4">
                     <div className="text-center">
                       <div className="text-2xl font-bold text-orange-400">{analysisResult.redactionDetection.redactedSections}</div>
                       <div className="text-sm text-orange-300">Redacted Sections</div>
                     </div>
                   </div>
-                  <div className="bg-blue-500/10 border border-blue-500/20 rounded-lg p-4">
+                  <div className="bg-blue-500/20 border border-blue-500/30 rounded-lg p-4">
                     <div className="text-center">
                       <div className="text-2xl font-bold text-blue-400">{analysisResult.redactionDetection.visibleContentPercentage}%</div>
                       <div className="text-sm text-blue-300">Visible Content</div>
                     </div>
                   </div>
-                  <div className="bg-purple-500/10 border border-purple-500/20 rounded-lg p-4">
+                  <div className="bg-purple-500/20 border border-purple-500/30 rounded-lg p-4">
                     <div className="text-center">
                       <div className="text-2xl font-bold text-purple-400">{analysisResult.redactionDetection.integrityCheck.consistencyScore}%</div>
                       <div className="text-sm text-purple-300">Integrity Score</div>
@@ -393,13 +393,13 @@ export function RedactionReviewPage({ onBack, country }: RedactionReviewPageProp
                     {analysisResult.redactionDetection.redactionTypes.map((type, index) => (
                       <div key={index} className={`p-4 rounded-lg border ${getRedactionTypeColor(type.riskLevel)} backdrop-blur-sm`}>
                         <div className="flex items-center justify-between mb-2">
-                          <h4 className="font-medium capitalize">{type.type.replace('_', ' ')}</h4>
-                          <span className="text-xs px-2 py-1 rounded-full bg-white/20">
+                          <h4 className="font-medium capitalize text-white/95">{type.type.replace('_', ' ')}</h4>
+                          <span className="text-xs px-2 py-1 rounded-full bg-white/30 text-white/95">
                             {type.count} found
                           </span>
                         </div>
-                        <p className="text-sm mb-2">{type.description}</p>
-                        <div className="flex items-center justify-between text-xs">
+                        <p className="text-sm mb-2 text-white/90">{type.description}</p>
+                        <div className="flex items-center justify-between text-xs text-white/85">
                           <span>Risk: {type.riskLevel}</span>
                         </div>
                       </div>
@@ -413,14 +413,14 @@ export function RedactionReviewPage({ onBack, country }: RedactionReviewPageProp
                 <h3 className="text-lg font-semibold text-white mb-3 text-enhanced-contrast">Risk Assessment</h3>
                 <div className={`p-4 rounded-lg border ${getRiskColor(analysisResult.riskAssessment.level)} backdrop-blur-sm`}>
                   <div className="flex items-center justify-between mb-2">
-                    <span className="font-medium">Risk Level: {analysisResult.riskAssessment.level}</span>
-                    <span className="font-bold">Score: {analysisResult.riskAssessment.score}/10</span>
+                    <span className="font-medium text-white/95">Risk Level: {analysisResult.riskAssessment.level}</span>
+                    <span className="font-bold text-white/95">Score: {analysisResult.riskAssessment.score}/10</span>
                   </div>
-                  <p className="text-sm mb-3">{analysisResult.riskAssessment.limitationNotice}</p>
+                  <p className="text-sm mb-3 text-white/90">{analysisResult.riskAssessment.limitationNotice}</p>
                   <div className="space-y-2">
                     <div>
-                      <p className="font-medium text-sm">Risk Factors:</p>
-                      <ul className="text-sm list-disc list-inside space-y-1">
+                      <p className="font-medium text-sm text-white/90">Risk Factors:</p>
+                      <ul className="text-sm list-disc list-inside space-y-1 text-white/85">
                         {analysisResult.riskAssessment.factors.map((factor, index) => (
                           <li key={index}>{factor}</li>
                         ))}
@@ -436,22 +436,22 @@ export function RedactionReviewPage({ onBack, country }: RedactionReviewPageProp
                   <h3 className="text-lg font-semibold text-white mb-3 text-enhanced-contrast">Clause-Level Impact Analysis</h3>
                   <div className="space-y-4">
                     {analysisResult.granularClauseImpact.map((clause, index) => (
-                      <div key={index} className="bg-white/5 border border-white/20 rounded-lg p-4 backdrop-blur-sm">
+                      <div key={index} className="bg-white/10 border border-white/30 rounded-lg p-4 backdrop-blur-sm">
                         <div className="flex items-start justify-between mb-3">
-                          <h4 className="font-medium text-white">{clause.clauseType}</h4>
+                          <h4 className="font-medium text-white/95">{clause.clauseType}</h4>
                           <span className={`px-2 py-1 rounded text-xs ${getRiskColor(clause.enforceabilityImpact.level)}`}>
                             {clause.enforceabilityImpact.level} Impact
                           </span>
                         </div>
                         <div className="space-y-2 text-sm">
                           <div>
-                            <span className="font-medium text-gray-300">Visible Content:</span>
-                            <p className="text-gray-400">{clause.visibleContent}</p>
+                            <span className="font-medium text-white/90">Visible Content:</span>
+                            <p className="text-white/85">{clause.visibleContent}</p>
                           </div>
                           {clause.redactedElements.length > 0 && (
                             <div>
-                              <span className="font-medium text-gray-300">Redacted Elements:</span>
-                              <ul className="text-gray-400 list-disc list-inside">
+                              <span className="font-medium text-white/90">Redacted Elements:</span>
+                              <ul className="text-white/85 list-disc list-inside">
                                 {clause.redactedElements.map((element, idx) => (
                                   <li key={idx}>{element}</li>
                                 ))}
@@ -459,13 +459,13 @@ export function RedactionReviewPage({ onBack, country }: RedactionReviewPageProp
                             </div>
                           )}
                           <div>
-                            <span className="font-medium text-gray-300">Enforceability Impact:</span>
-                            <p className="text-gray-400">{clause.enforceabilityImpact.description}</p>
+                            <span className="font-medium text-white/90">Enforceability Impact:</span>
+                            <p className="text-white/85">{clause.enforceabilityImpact.description}</p>
                           </div>
                           {clause.recommendations.length > 0 && (
                             <div>
-                              <span className="font-medium text-gray-300">Recommendations:</span>
-                              <ul className="text-gray-400 list-disc list-inside">
+                              <span className="font-medium text-white/90">Recommendations:</span>
+                              <ul className="text-white/85 list-disc list-inside">
                                 {clause.recommendations.map((rec, idx) => (
                                   <li key={idx}>{rec}</li>
                                 ))}
@@ -483,7 +483,7 @@ export function RedactionReviewPage({ onBack, country }: RedactionReviewPageProp
               <div className="mb-6">
                 <h3 className="text-lg font-semibold text-white mb-3 text-enhanced-contrast">Impact Assessment</h3>
                 <div className="grid md:grid-cols-2 gap-4">
-                  <div className="bg-red-500/10 border border-red-500/20 rounded-lg p-4">
+                  <div className="bg-red-500/20 border border-red-500/30 rounded-lg p-4">
                     <h4 className="font-medium text-red-400 mb-2">Critical Gaps</h4>
                     <ul className="text-sm text-red-300 space-y-1">
                       {analysisResult.impactAssessment.criticalGaps.map((gap, index) => (
@@ -491,7 +491,7 @@ export function RedactionReviewPage({ onBack, country }: RedactionReviewPageProp
                       ))}
                     </ul>
                   </div>
-                  <div className="bg-orange-500/10 border border-orange-500/20 rounded-lg p-4">
+                  <div className="bg-orange-500/20 border border-orange-500/30 rounded-lg p-4">
                     <h4 className="font-medium text-orange-400 mb-2">Legal Exposure</h4>
                     <ul className="text-sm text-orange-300 space-y-1">
                       {analysisResult.impactAssessment.legalExposure.map((exposure, index) => (
@@ -505,8 +505,8 @@ export function RedactionReviewPage({ onBack, country }: RedactionReviewPageProp
               {/* Recommendations */}
               <div className="mb-6">
                 <h3 className="text-lg font-semibold text-white mb-3 text-enhanced-contrast">Recommendations</h3>
-                <div className="bg-emerald/10 border border-emerald/20 rounded-lg p-4 backdrop-blur-sm">
-                  <ol className="text-emerald/90 space-y-2">
+                <div className="bg-emerald/20 border border-emerald/30 rounded-lg p-4 backdrop-blur-sm">
+                  <ol className="text-emerald/95 space-y-2">
                     {analysisResult.recommendations.map((rec, index) => (
                       <li key={index} className="text-sm">{index + 1}. {rec}</li>
                     ))}
@@ -517,8 +517,8 @@ export function RedactionReviewPage({ onBack, country }: RedactionReviewPageProp
               {/* Next Steps */}
               <div className="mb-6">
                 <h3 className="text-lg font-semibold text-white mb-3 text-enhanced-contrast">Next Steps</h3>
-                <div className="bg-sapphire-blue/10 border border-sapphire-blue/20 rounded-lg p-4 backdrop-blur-sm">
-                  <ol className="text-sapphire-blue/90 space-y-2">
+                <div className="bg-sapphire-blue/20 border border-sapphire-blue/30 rounded-lg p-4 backdrop-blur-sm">
+                  <ol className="text-sapphire-blue/95 space-y-2">
                     {analysisResult.nextSteps.map((step, index) => (
                       <li key={index} className="text-sm">{index + 1}. {step}</li>
                     ))}
