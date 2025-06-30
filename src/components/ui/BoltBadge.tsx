@@ -65,7 +65,7 @@ export function BoltBadge({
         <BoltSvg />
       ) : (
         <img 
-          src="/WhatsApp Image 2025-06-30 at 23.26.19_b168246d.jpg" 
+          src="/white_circle_360x360.png" 
           alt="Powered by Bolt.new" 
           className={`${sizeClasses[size]} rounded-full transition-all duration-300 hover:drop-shadow-lg`}
           onError={handleImageError}
