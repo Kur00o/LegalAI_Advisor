@@ -233,20 +233,20 @@ export function DocumentAnalysisPage({ onBack, country }: DocumentAnalysisPagePr
 
   const getRiskColor = (level: string) => {
     switch (level) {
-      case 'LOW': return 'text-emerald border-emerald/20 bg-emerald/10';
-      case 'MEDIUM': return 'text-deep-bronze border-deep-bronze/20 bg-deep-bronze/10';
-      case 'HIGH': return 'text-legal-red border-legal-red/20 bg-legal-red/10';
-      case 'CRITICAL': return 'text-legal-red border-legal-red/20 bg-legal-red/20';
-      default: return 'text-cool-gray border-cool-gray/20 bg-cool-gray/10';
+      case 'LOW': return 'text-emerald border-emerald/30 bg-emerald/20';
+      case 'MEDIUM': return 'text-deep-bronze border-deep-bronze/30 bg-deep-bronze/20';
+      case 'HIGH': return 'text-legal-red border-legal-red/30 bg-legal-red/20';
+      case 'CRITICAL': return 'text-legal-red border-legal-red/30 bg-legal-red/30';
+      default: return 'text-cool-gray border-cool-gray/30 bg-cool-gray/20';
     }
   };
 
   const getSeverityColor = (severity: string) => {
     switch (severity) {
-      case 'info': return 'text-sapphire-blue border-sapphire-blue/20 bg-sapphire-blue/10';
-      case 'warning': return 'text-deep-bronze border-deep-bronze/20 bg-deep-bronze/10';
-      case 'critical': return 'text-legal-red border-legal-red/20 bg-legal-red/10';
-      default: return 'text-cool-gray border-cool-gray/20 bg-cool-gray/10';
+      case 'info': return 'text-sapphire-blue border-sapphire-blue/30 bg-sapphire-blue/20';
+      case 'warning': return 'text-deep-bronze border-deep-bronze/30 bg-deep-bronze/20';
+      case 'critical': return 'text-legal-red border-legal-red/30 bg-legal-red/20';
+      default: return 'text-cool-gray border-cool-gray/30 bg-cool-gray/20';
     }
   };
 
@@ -413,7 +413,7 @@ export function DocumentAnalysisPage({ onBack, country }: DocumentAnalysisPagePr
 
           {/* Analysis Results */}
           {analysisResult && (
-            <div className="bg-white/5 backdrop-blur-xl rounded-xl shadow-sm border border-white/10 p-6">
+            <div className="bg-white/10 backdrop-blur-xl rounded-xl shadow-sm border border-white/20 p-6">
               <div className="flex items-center justify-between mb-6">
                 <h2 className="text-xl font-semibold text-white text-enhanced-contrast">Analysis Results</h2>
                 <div className="flex items-center space-x-3">
@@ -446,14 +446,14 @@ export function DocumentAnalysisPage({ onBack, country }: DocumentAnalysisPagePr
                 <h3 className="text-lg font-semibold text-white mb-3 text-enhanced-contrast">Risk Assessment</h3>
                 <div className={`p-4 rounded-lg border ${getRiskColor(analysisResult.riskAssessment.level)} backdrop-blur-sm`}>
                   <div className="flex items-center justify-between mb-2">
-                    <span className="font-medium">Risk Level: {analysisResult.riskAssessment.level}</span>
-                    <span className="font-bold">Score: {analysisResult.riskAssessment.score}/10</span>
+                    <span className="font-medium text-white/95">Risk Level: {analysisResult.riskAssessment.level}</span>
+                    <span className="font-bold text-white/95">Score: {analysisResult.riskAssessment.score}/10</span>
                   </div>
                   <div className="space-y-2">
                     {analysisResult.riskAssessment.serviceProviderRisks && analysisResult.riskAssessment.serviceProviderRisks.length > 0 && (
                       <div>
-                        <p className="font-medium text-sm">Service Provider Risks:</p>
-                        <ul className="text-sm list-disc list-inside space-y-1">
+                        <p className="font-medium text-sm text-white/90">Service Provider Risks:</p>
+                        <ul className="text-sm list-disc list-inside space-y-1 text-white/85">
                           {analysisResult.riskAssessment.serviceProviderRisks.map((risk, index) => (
                             <li key={index}>{risk}</li>
                           ))}
@@ -462,8 +462,8 @@ export function DocumentAnalysisPage({ onBack, country }: DocumentAnalysisPagePr
                     )}
                     {analysisResult.riskAssessment.clientRisks && analysisResult.riskAssessment.clientRisks.length > 0 && (
                       <div>
-                        <p className="font-medium text-sm">Client Risks:</p>
-                        <ul className="text-sm list-disc list-inside space-y-1">
+                        <p className="font-medium text-sm text-white/90">Client Risks:</p>
+                        <ul className="text-sm list-disc list-inside space-y-1 text-white/85">
                           {analysisResult.riskAssessment.clientRisks.map((risk, index) => (
                             <li key={index}>{risk}</li>
                           ))}
@@ -472,8 +472,8 @@ export function DocumentAnalysisPage({ onBack, country }: DocumentAnalysisPagePr
                     )}
                     {(!analysisResult.riskAssessment.serviceProviderRisks && !analysisResult.riskAssessment.clientRisks && analysisResult.riskAssessment.factors) && (
                       <div>
-                        <p className="font-medium text-sm">Risk Factors:</p>
-                        <ul className="text-sm list-disc list-inside space-y-1">
+                        <p className="font-medium text-sm text-white/90">Risk Factors:</p>
+                        <ul className="text-sm list-disc list-inside space-y-1 text-white/85">
                           {analysisResult.riskAssessment.factors.map((factor, index) => (
                             <li key={index}>{factor}</li>
                           ))}
@@ -487,8 +487,8 @@ export function DocumentAnalysisPage({ onBack, country }: DocumentAnalysisPagePr
               {/* Summary */}
               <div className="mb-6">
                 <h3 className="text-lg font-semibold text-white mb-3 text-enhanced-contrast">Executive Summary</h3>
-                <div className="bg-white/5 border border-white/20 rounded-lg p-4 backdrop-blur-sm">
-                  <p className="text-gray-300 text-enhanced-contrast">{analysisResult.summary}</p>
+                <div className="bg-white/10 border border-white/30 rounded-lg p-4 backdrop-blur-sm">
+                  <p className="text-white/90 text-enhanced-contrast">{analysisResult.summary}</p>
                 </div>
               </div>
 
@@ -501,18 +501,18 @@ export function DocumentAnalysisPage({ onBack, country }: DocumentAnalysisPagePr
                       <div key={index} className={`p-4 rounded-lg border ${getSeverityColor(finding.severity)} backdrop-blur-sm`}>
                         <div className="flex items-start justify-between">
                           <div className="flex-1">
-                            <h4 className="font-medium mb-1">{finding.category}</h4>
-                            <p className="text-sm mb-2">{finding.finding}</p>
+                            <h4 className="font-medium mb-1 text-white/95">{finding.category}</h4>
+                            <p className="text-sm mb-2 text-white/90">{finding.finding}</p>
                             {finding.impact && (
-                              <p className="text-xs opacity-80">Impact: {finding.impact}</p>
+                              <p className="text-xs text-white/85">Impact: {finding.impact}</p>
                             )}
                           </div>
                           <div className="flex flex-col items-end space-y-1">
-                            <span className="text-xs px-2 py-1 rounded-full bg-white/20">
+                            <span className="text-xs px-2 py-1 rounded-full bg-white/30 text-white/95">
                               {finding.severity.toUpperCase()}
                             </span>
                             {finding.affectedParty && (
-                              <span className="text-xs px-2 py-1 rounded-full bg-white/10">
+                              <span className="text-xs px-2 py-1 rounded-full bg-white/20 text-white/90">
                                 {finding.affectedParty.replace('_', ' ').toUpperCase()}
                               </span>
                             )}
@@ -528,10 +528,10 @@ export function DocumentAnalysisPage({ onBack, country }: DocumentAnalysisPagePr
               {analysisResult.recommendations && (
                 <div className="mb-6">
                   <h3 className="text-lg font-semibold text-white mb-3 text-enhanced-contrast">Recommendations</h3>
-                  <div className="bg-emerald/10 border border-emerald/20 rounded-lg p-4 backdrop-blur-sm">
+                  <div className="bg-emerald/20 border border-emerald/30 rounded-lg p-4 backdrop-blur-sm">
                     {Array.isArray(analysisResult.recommendations) ? (
                       typeof analysisResult.recommendations[0] === 'string' ? (
-                        <ol className="text-emerald/90 space-y-2">
+                        <ol className="text-emerald/95 space-y-2">
                           {analysisResult.recommendations.map((rec, index) => (
                             <li key={index} className="text-sm">{index + 1}. {rec}</li>
                           ))}
@@ -539,11 +539,11 @@ export function DocumentAnalysisPage({ onBack, country }: DocumentAnalysisPagePr
                       ) : (
                         <div className="space-y-3">
                           {analysisResult.recommendations.map((rec: any, index) => (
-                            <div key={index} className="border-l-2 border-emerald/30 pl-3">
-                              <h4 className="font-medium text-emerald text-sm">{rec.category || 'Recommendation'}</h4>
+                            <div key={index} className="border-l-2 border-emerald/40 pl-3">
+                              <h4 className="font-medium text-emerald/95 text-sm">{rec.category || 'Recommendation'}</h4>
                               <p className="text-emerald/90 text-sm">{rec.recommendation}</p>
                               {rec.implementation && (
-                                <p className="text-emerald/70 text-xs mt-1">Implementation: {rec.implementation}</p>
+                                <p className="text-emerald/85 text-xs mt-1">Implementation: {rec.implementation}</p>
                               )}
                             </div>
                           ))}
@@ -560,8 +560,8 @@ export function DocumentAnalysisPage({ onBack, country }: DocumentAnalysisPagePr
               {analysisResult.legalCitations && analysisResult.legalCitations.length > 0 && (
                 <div className="mb-6">
                   <h3 className="text-lg font-semibold text-white mb-3 text-enhanced-contrast">Legal Citations</h3>
-                  <div className="bg-sapphire-blue/10 border border-sapphire-blue/20 rounded-lg p-4 backdrop-blur-sm">
-                    <ul className="text-sapphire-blue/90 space-y-1">
+                  <div className="bg-sapphire-blue/20 border border-sapphire-blue/30 rounded-lg p-4 backdrop-blur-sm">
+                    <ul className="text-sapphire-blue/95 space-y-1">
                       {analysisResult.legalCitations.map((citation, index) => (
                         <li key={index} className="text-sm">• {citation}</li>
                       ))}
@@ -574,10 +574,10 @@ export function DocumentAnalysisPage({ onBack, country }: DocumentAnalysisPagePr
 
           {/* Batch Results */}
           {batchResult && (
-            <div className="bg-white/5 backdrop-blur-xl rounded-xl shadow-sm border border-white/10 p-6">
+            <div className="bg-white/10 backdrop-blur-xl rounded-xl shadow-sm border border-white/20 p-6">
               <h2 className="text-xl font-semibold text-white mb-4 text-enhanced-contrast">Batch Analysis Results</h2>
               <div className="mb-4">
-                <div className="flex items-center justify-between text-sm text-gray-300">
+                <div className="flex items-center justify-between text-sm text-white/90">
                   <span>Progress: {batchResult.completedFiles}/{batchResult.totalFiles} files</span>
                   <span>Status: {batchResult.status}</span>
                 </div>
@@ -594,7 +594,7 @@ export function DocumentAnalysisPage({ onBack, country }: DocumentAnalysisPagePr
                   <h3 className="font-medium text-red-400 mb-2">Errors:</h3>
                   <div className="space-y-1">
                     {batchResult.errors.map((error, index) => (
-                      <p key={index} className="text-sm text-red-300 bg-red-500/10 p-2 rounded">{error}</p>
+                      <p key={index} className="text-sm text-red-300 bg-red-500/20 p-2 rounded">{error}</p>
                     ))}
                   </div>
                 </div>
@@ -605,15 +605,15 @@ export function DocumentAnalysisPage({ onBack, country }: DocumentAnalysisPagePr
                   <h3 className="font-medium text-white mb-3">Completed Analyses:</h3>
                   <div className="space-y-3">
                     {batchResult.results.map((result, index) => (
-                      <div key={index} className="bg-white/5 border border-white/20 rounded-lg p-4">
+                      <div key={index} className="bg-white/10 border border-white/30 rounded-lg p-4">
                         <div className="flex items-center justify-between mb-2">
-                          <h4 className="font-medium text-white">{result.documentInfo.fileName}</h4>
+                          <h4 className="font-medium text-white/95">{result.documentInfo.fileName}</h4>
                           <span className={`px-2 py-1 rounded text-xs ${getRiskColor(result.riskAssessment.level)}`}>
                             {result.riskAssessment.level}
                           </span>
                         </div>
-                        <p className="text-sm text-gray-300 mb-2">{result.summary.substring(0, 200)}...</p>
-                        <div className="flex items-center justify-between text-xs text-gray-400">
+                        <p className="text-sm text-white/90 mb-2">{result.summary.substring(0, 200)}...</p>
+                        <div className="flex items-center justify-between text-xs text-white/85">
                           <span>Risk Score: {result.riskAssessment.score}/10</span>
                           <span>{result.keyFindings?.length || 0} findings</span>
                         </div>
