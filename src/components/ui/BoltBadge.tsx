@@ -33,7 +33,7 @@ export function BoltBadge({
       aria-label="Powered by Bolt.new"
     >
       <img 
-        src="/bolt-badge.png" 
+        src="/white_circle_360x360.png" 
         alt="Powered by Bolt.new" 
         className={`${sizeClasses[size]} rounded-full transition-all duration-300 hover:drop-shadow-lg`}
       />
