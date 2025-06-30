@@ -34,17 +34,17 @@ export function BoltBadge({
       style={{ backgroundColor: 'white' }}
     >
       <circle cx="180" cy="180" r="180" fill="white"/>
+      <path d="M180 70 L220 70 L160 180 L200 180 L140 290 L160 200 L120 200 Z" fill="black"/>
       <text 
         x="180" 
-        y="180" 
+        y="340" 
         textAnchor="middle" 
-        dominantBaseline="middle" 
-        fontSize="0" 
-        fill="transparent"
+        fontSize="24" 
+        fontWeight="bold" 
+        fill="black"
       >
-        POWERED BY BOLT.NEW MADE IN BOLT.NEW
+        POWERED BY BOLT.NEW
       </text>
-      <path d="M180 70 L220 70 L160 180 L200 180 L140 290 L160 200 L120 200 Z" fill="black"/>
     </svg>
   );
 
@@ -65,7 +65,7 @@ export function BoltBadge({
         <BoltSvg />
       ) : (
         <img 
-          src="/white_circle_360x360.png" 
+          src="/WhatsApp Image 2025-06-30 at 23.26.19_b168246d.jpg" 
           alt="Powered by Bolt.new" 
           className={`${sizeClasses[size]} rounded-full transition-all duration-300 hover:drop-shadow-lg`}
           onError={handleImageError}
