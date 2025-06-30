@@ -151,7 +151,7 @@ html {
 /* Bolt.new Badge Responsive Styles */
 @media (max-width: 768px) {
   .bolt-badge {
-    top: 0.75rem;
+    top: 4rem; /* Moved down from 0.75rem to avoid mobile taskbar */
     right: 0.75rem;
   }
   
@@ -163,7 +163,7 @@ html {
 
 @media (min-width: 769px) and (max-width: 1024px) {
   .bolt-badge {
-    top: 1rem;
+    top: 5rem; /* Moved down from 1rem to avoid tablet taskbar */
     right: 1rem;
   }
   
@@ -175,7 +175,7 @@ html {
 
 @media (min-width: 1025px) {
   .bolt-badge {
-    top: 1rem;
+    top: 5rem; /* Moved down from 1rem to avoid desktop taskbar */
     right: 1rem;
   }
 }
