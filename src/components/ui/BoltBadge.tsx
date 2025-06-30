@@ -12,9 +12,9 @@ export function BoltBadge({
   position = 'top-right'
 }: BoltBadgeProps) {
   const sizeClasses = {
-    small: 'w-12 h-12 md:w-16 md:h-16',
-    medium: 'w-16 h-16 md:w-20 md:h-20',
-    large: 'w-20 h-20 md:w-24 md:h-24'
+    small: 'w-16 h-16 md:w-20 md:h-20',
+    medium: 'w-20 h-20 md:w-24 md:h-24',
+    large: 'w-24 h-24 md:w-28 md:h-28'
   };
 
   const positionClasses = {
