@@ -352,9 +352,6 @@ export function DocumentAnalysisPage({ onBack, country }: DocumentAnalysisPagePr
                         <FileText className="h-5 w-5 text-blue-400" />
                         <div>
                           <p className="font-medium text-blue-200 text-enhanced-contrast">{file.name}</p>
-                          <p className="text-sm text-blue-300 text-enhanced-contrast">
-                            {(file.size / 1024 / 1024).toFixed(2)} MB
-                          </p>
                         </div>
                       </div>
                       <button
