@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate, useNavigate, useLocation } from 'react-router-dom';
-import { Scale, Upload, MessageSquare, FileText, Shield, ChevronRight, Globe, Clock, CheckCircle, User, LogOut, AlertCircle, Menu, X, ArrowRight, Star, Zap, Target, Sparkles, Search } from 'lucide-react';
+import { Scale, Upload, MessageSquare, FileText, Shield, ChevronRight, Globe, Clock, CheckCircle, User, LogOut, AlertCircle, Menu, X, ArrowRight, Star, Zap, Target, Sparkles, Search, Mail, Linkedin } from 'lucide-react';
 import { FirebaseAuthProvider, useFirebaseAuth } from './contexts/FirebaseAuthContext';
 import { AuthModal } from './components/auth/AuthModal';
 import { AIAuthModal } from './components/auth/AIAuthModal';
@@ -505,25 +505,99 @@ function AppContent() {
 
         {/* Contact Section */}
         <section id="contact" className="py-32 px-6 lg:px-8 border-t border-sapphire-blue/20 relative">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl md:text-6xl font-bold mb-8">
-              Ready to Get
-              <br />
-              <span className="bg-gradient-to-r from-sapphire-blue to-regal-purple bg-clip-text text-transparent">Started?</span>
-            </h2>
-            <p className="text-xl text-cool-gray mb-12 max-w-2xl mx-auto">
-              Join thousands of legal professionals who trust LegalAI Pro for their document analysis and legal guidance needs.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-              <button
-                onClick={handleGetStarted}
-                className="bg-sapphire-blue text-off-white px-8 py-4 rounded-lg hover:bg-sapphire-blue/90 transition-all font-semibold group"
-              >
-                Start Free Trial
-                <ArrowRight className="inline-block ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                <Sparkles className="inline-block ml-1 h-4 w-4 animate-pulse" />
-              </button>
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-6xl font-bold mb-8">
+                Meet Our
+                <br />
+                <span className="bg-gradient-to-r from-sapphire-blue to-regal-purple bg-clip-text text-transparent">Development Team</span>
+              </h2>
+              <p className="text-xl text-cool-gray max-w-2xl mx-auto">
+                The talented developers behind LegalAI Pro, bringing together expertise in AI, legal technology, and user experience.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8">
+              {/* Developer 1 */}
+              <div className="bg-charcoal-gray/50 backdrop-blur-sm p-8 rounded-xl border border-sapphire-blue/20 text-center">
+                <div className="w-20 h-20 bg-sapphire-blue/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <User className="h-10 w-10 text-sapphire-blue" />
+                </div>
+                <h3 className="text-xl font-semibold text-off-white mb-2">Shubh Kesarwani</h3>
+                <p className="text-cool-gray mb-4">Lead Developer</p>
+                <div className="space-y-3">
+                  <a 
+                    href="mailto:zshubh121@gmail.com" 
+                    className="flex items-center justify-center space-x-2 text-cool-gray hover:text-off-white transition-colors"
+                  >
+                    <Mail className="h-4 w-4" />
+                    <span className="text-sm">zshubh121@gmail.com</span>
+                  </a>
+                  <a 
+                    href="https://linkedin.com/in/shubhkesarwan/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center space-x-2 text-sapphire-blue hover:text-sapphire-blue/80 transition-colors"
+                  >
+                    <Linkedin className="h-4 w-4" />
+                    <span className="text-sm">LinkedIn Profile</span>
+                  </a>
+                </div>
+              </div>
+
+              {/* Developer 2 */}
+              <div className="bg-charcoal-gray/50 backdrop-blur-sm p-8 rounded-xl border border-sapphire-blue/20 text-center">
+                <div className="w-20 h-20 bg-emerald/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <User className="h-10 w-10 text-emerald" />
+                </div>
+                <h3 className="text-xl font-semibold text-off-white mb-2">Aaryan Chhabra</h3>
+                <p className="text-cool-gray mb-4">Full Stack Developer</p>
+                <div className="space-y-3">
+                  <a 
+                    href="mailto:aaryanchhabra70@gmail.com" 
+                    className="flex items-center justify-center space-x-2 text-cool-gray hover:text-off-white transition-colors"
+                  >
+                    <Mail className="h-4 w-4" />
+                    <span className="text-sm">aaryanchhabra70@gmail.com</span>
+                  </a>
+                  <a 
+                    href="https://www.linkedin.com/in/aaryan-chhabra/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center space-x-2 text-sapphire-blue hover:text-sapphire-blue/80 transition-colors"
+                  >
+                    <Linkedin className="h-4 w-4" />
+                    <span className="text-sm">LinkedIn Profile</span>
+                  </a>
+                </div>
+              </div>
+
+              {/* Developer 3 */}
+              <div className="bg-charcoal-gray/50 backdrop-blur-sm p-8 rounded-xl border border-sapphire-blue/20 text-center">
+                <div className="w-20 h-20 bg-regal-purple/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <User className="h-10 w-10 text-regal-purple" />
+                </div>
+                <h3 className="text-xl font-semibold text-off-white mb-2">Mahek Shukla</h3>
+                <p className="text-cool-gray mb-4">AI/ML Developer</p>
+                <div className="space-y-3">
+                  <a 
+                    href="mailto:mahekrutuja@gmail.com" 
+                    className="flex items-center justify-center space-x-2 text-cool-gray hover:text-off-white transition-colors"
+                  >
+                    <Mail className="h-4 w-4" />
+                    <span className="text-sm">mahekrutuja@gmail.com</span>
+                  </a>
+                  <a 
+                    href="https://www.linkedin.com/in/mahek-shukla-technophile/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center space-x-2 text-sapphire-blue hover:text-sapphire-blue/80 transition-colors"
+                  >
+                    <Linkedin className="h-4 w-4" />
+                    <span className="text-sm">LinkedIn Profile</span>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </section>
