@@ -7,6 +7,7 @@ import { AIAuthModal } from './components/auth/AIAuthModal';
 import { ResetPasswordPage } from './components/auth/ResetPasswordPage';
 import { UserProfile } from './components/profile/UserProfile';
 import { ServicesDropdown } from './components/navigation/ServicesDropdown';
+import { BoltBadge } from './components/ui/BoltBadge';
 import { useAuthGuard } from './hooks/useAuthGuard';
 import { useSmoothScroll } from './hooks/useScrollPosition';
 import { DocumentAnalysisPage } from './pages/DocumentAnalysisPage';
@@ -54,27 +55,6 @@ function LegalBackground() {
         <div className="absolute inset-0 bg-gradient-to-br from-midnight-navy/80 via-charcoal-gray/30 to-midnight-navy/60"></div>
         <div className="absolute inset-0 bg-[linear-gradient(rgba(224,225,221,0.03)_1px,transparent_1px),linear-gradient(to_right,rgba(224,225,221,0.03)_1px,transparent_1px)] bg-[size:50px_50px]"></div>
       </div>
-    </div>
-  );
-}
-
-// Bolt.new Badge Component
-function BoltBadge() {
-  return (
-    <div className="fixed top-4 right-4 z-50 bolt-badge">
-      <a
-        href="https://bolt.new/"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Built with Bolt.new - Visit Bolt.new to create your own AI-powered applications"
-        className="block transition-all duration-300 hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-sapphire-blue focus:ring-offset-2 focus:ring-offset-midnight-navy rounded-full"
-      >
-        <img 
-          src="/white_circle_360x360.png" 
-          alt="Powered by Bolt.new" 
-          className="w-24 h-24 md:w-28 md:h-28 rounded-full"
-        />
-      </a>
     </div>
   );
 }

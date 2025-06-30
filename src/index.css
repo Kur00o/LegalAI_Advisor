@@ -148,39 +148,25 @@ html {
   animation: scaleIn 0.5s ease-out;
 }
 
-/* Bolt.new Badge Responsive Styles */
-@media (max-width: 768px) {
-  .bolt-badge {
-    top: 4rem; /* Moved down from 0.75rem to avoid mobile taskbar */
-    right: 0.75rem;
-  }
-  
-  .bolt-badge img {
-    width: 60px;
-    height: 60px;
-  }
+/* Bolt.new Badge Styles */
+.bolt-badge {
+  transition: all 0.3s ease;
 }
 
-@media (min-width: 769px) and (max-width: 1024px) {
-  .bolt-badge {
-    top: 5rem; /* Moved down from 1rem to avoid tablet taskbar */
-    right: 1rem;
-  }
-  
-  .bolt-badge img {
-    width: 80px;
-    height: 80px;
-  }
+.bolt-badge:hover {
+  transform: scale(1.05);
 }
 
-@media (min-width: 1025px) {
-  .bolt-badge {
-    top: 5rem; /* Moved down from 1rem to avoid desktop taskbar */
-    right: 1rem;
-  }
+.bolt-badge img {
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
 }
 
-/* Ensure badge doesn't interfere with mobile menu */
+.bolt-badge:hover img {
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.3));
+}
+
+/* Responsive positioning for Bolt badge */
 @media (max-width: 768px) {
   .bolt-badge {
     z-index: 45; /* Lower than mobile menu but higher than content */
@@ -202,6 +188,10 @@ html {
   
   .bolt-badge:hover {
     transform: none;
+  }
+  
+  .animate-glow {
+    animation-duration: 2s;
   }
 }
 
@@ -394,10 +384,6 @@ textarea:focus-visible {
   
   .animate-float {
     animation-duration: 8s;
-  }
-  
-  .animate-glow {
-    animation-duration: 2s;
   }
   
   .floating-orb {
