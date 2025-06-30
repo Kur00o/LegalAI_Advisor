@@ -36,7 +36,12 @@ export function BoltBadge({
         <img 
           src="/white_circle_360x360.png" 
           alt="Powered by Bolt.new" 
-          className={`${sizeClasses[size]} rounded-full object-contain`}
+          className={`${sizeClasses[size]} rounded-full object-contain transition-all duration-300 hover:drop-shadow-lg`}
+          onError={(e) => {
+            console.error('Failed to load Bolt.new badge image');
+            // Fallback: hide the badge if image fails to load
+            e.currentTarget.parentElement?.parentElement?.style.setProperty('display', 'none');
+          }}
         />
       </a>
     </div>
