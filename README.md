@@ -1,1 +1,1 @@
-# LegalAI_Advisor
+# LegalAI_Advisor_AI
