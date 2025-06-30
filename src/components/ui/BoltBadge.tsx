@@ -18,8 +18,8 @@ export function BoltBadge({
   };
 
   const positionClasses = {
-    'top-right': 'top-4 right-4 md:top-5 md:right-5',
-    'top-left': 'top-4 left-4 md:top-5 md:left-5',
+    'top-right': 'top-20 right-4 md:top-24 md:right-5', // Adjusted to be below taskbar
+    'top-left': 'top-20 left-4 md:top-24 md:left-5',    // Adjusted to be below taskbar
     'bottom-right': 'bottom-4 right-4 md:bottom-5 md:right-5',
     'bottom-left': 'bottom-4 left-4 md:bottom-5 md:left-5'
   };

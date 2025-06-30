@@ -234,7 +234,7 @@ function AppContent() {
       <LegalBackground />
       
       {/* Bolt.new Badge */}
-      <BoltBadge size="small" position="bottom-right" />
+      <BoltBadge size="small" position="top-right" />
       
       {/* Firebase Configuration Notice */}
       {!isConfigured && (
