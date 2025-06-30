@@ -186,6 +186,7 @@ export function LegalChatInterface({
             { role: 'user', content: currentInput }
           ];
 
+          // Declare aiResponse properly
           const aiResponse = await aiProviderService.generateResponse(messages, {
             task: 'chat',
             temperature: 0.1,
@@ -249,6 +250,7 @@ export function LegalChatInterface({
           { role: 'user', content: currentInput }
         ];
 
+        // Declare aiResponse properly
         const aiResponse = await aiProviderService.generateResponse(messages, {
           task: 'chat',
           temperature: 0.3,
