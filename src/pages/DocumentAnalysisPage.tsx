@@ -323,7 +323,7 @@ export function DocumentAnalysisPage({ onBack, country }: DocumentAnalysisPagePr
                 {uploadedFiles.length > 0 ? `${uploadedFiles.length} file(s) selected` : 'Drop your legal documents here'}
               </p>
               <p className="text-sm text-gray-400 mb-4 text-enhanced-contrast">
-                Supports TXT, DOC, DOCX formats up to 10MB each
+                Supports TXT, DOC, DOCX formats up to 10MB
               </p>
               <input
                 type="file"
