@@ -58,6 +58,32 @@ function LegalBackground() {
   );
 }
 
+// Bolt.new Badge Component
+function BoltBadge() {
+  return (
+    <div className="fixed top-4 right-4 z-50">
+      <a
+        href="https://bolt.new/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Built with Bolt.new - Visit Bolt.new to create your own AI-powered applications"
+        className="block transition-all duration-300 hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-sapphire-blue focus:ring-offset-2 focus:ring-offset-midnight-navy rounded-lg"
+      >
+        <div className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-4 py-2 rounded-lg shadow-lg backdrop-blur-sm border border-white/20 hover:from-purple-500 hover:to-blue-500 transition-all duration-300">
+          <div className="flex items-center space-x-2">
+            <div className="w-6 h-6 bg-white rounded-full flex items-center justify-center">
+              <div className="w-4 h-4 bg-gradient-to-br from-purple-600 to-blue-600 rounded-full flex items-center justify-center">
+                <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
+              </div>
+            </div>
+            <span className="font-semibold text-sm whitespace-nowrap">Built with Bolt</span>
+          </div>
+        </div>
+      </a>
+    </div>
+  );
+}
+
 // Auth callback component
 function AuthCallback() {
   const navigate = useNavigate();
@@ -231,6 +257,9 @@ function AppContent() {
   return (
     <div className="min-h-screen relative text-off-white overflow-hidden">
       <LegalBackground />
+      
+      {/* Bolt.new Badge */}
+      <BoltBadge />
       
       {/* Firebase Configuration Notice */}
       {!isConfigured && (

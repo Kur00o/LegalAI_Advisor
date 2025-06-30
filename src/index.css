@@ -148,6 +148,81 @@ html {
   animation: scaleIn 0.5s ease-out;
 }
 
+/* Bolt.new Badge Responsive Styles */
+@media (max-width: 768px) {
+  .bolt-badge {
+    top: 0.75rem;
+    right: 0.75rem;
+    min-width: 100px;
+  }
+  
+  .bolt-badge .badge-content {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.75rem;
+  }
+  
+  .bolt-badge .badge-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+  
+  .bolt-badge .badge-icon-inner {
+    width: 1rem;
+    height: 1rem;
+  }
+  
+  .bolt-badge .badge-icon-dot {
+    width: 0.375rem;
+    height: 0.375rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .bolt-badge {
+    top: 1rem;
+    right: 1rem;
+    min-width: 120px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .bolt-badge {
+    top: 1rem;
+    right: 1rem;
+    min-width: 140px;
+  }
+}
+
+/* Ensure badge doesn't interfere with mobile menu */
+@media (max-width: 768px) {
+  .bolt-badge {
+    z-index: 45; /* Lower than mobile menu but higher than content */
+  }
+}
+
+/* High contrast mode support for badge */
+@media (prefers-contrast: high) {
+  .bolt-badge .badge-content {
+    border: 2px solid white;
+    background: linear-gradient(to right, #7c3aed, #2563eb);
+  }
+}
+
+/* Reduced motion support for badge */
+@media (prefers-reduced-motion: reduce) {
+  .bolt-badge {
+    transition: none;
+  }
+  
+  .bolt-badge:hover {
+    transform: none;
+  }
+  
+  .bolt-badge .badge-icon-dot {
+    animation: none;
+  }
+}
+
 /* Salcosta-inspired background styles */
 .salcosta-background {
   position: fixed;
