@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 interface BoltBadgeProps {
   className?: string;
@@ -11,8 +11,6 @@ export function BoltBadge({
   size = 'medium',
   position = 'top-right'
 }: BoltBadgeProps) {
-  const [imageError, setImageError] = useState(false);
-
   const sizeClasses = {
     small: 'w-12 h-12 md:w-16 md:h-16',
     medium: 'w-16 h-16 md:w-20 md:h-20',
@@ -26,33 +24,6 @@ export function BoltBadge({
     'bottom-left': 'bottom-4 left-4 md:bottom-5 md:left-5'
   };
 
-  // Fallback SVG for when the image fails to load
-  const BoltSvg = () => (
-    <svg 
-      viewBox="0 0 360 360" 
-      className={`${sizeClasses[size]} rounded-full transition-all duration-300 hover:drop-shadow-lg`}
-      style={{ backgroundColor: 'white' }}
-    >
-      <circle cx="180" cy="180" r="180" fill="white"/>
-      <path d="M180 70 L220 70 L160 180 L200 180 L140 290 L160 200 L120 200 Z" fill="black"/>
-      <text 
-        x="180" 
-        y="340" 
-        textAnchor="middle" 
-        fontSize="24" 
-        fontWeight="bold" 
-        fill="black"
-      >
-        POWERED BY BOLT.NEW
-      </text>
-    </svg>
-  );
-
-  const handleImageError = () => {
-    console.error("Failed to load Bolt.new badge image");
-    setImageError(true);
-  };
-
   return (
     <a 
       href="https://bolt.new/" 
@@ -61,16 +32,11 @@ export function BoltBadge({
       className={`fixed ${positionClasses[position]} z-30 bolt-badge ${className}`}
       aria-label="Powered by Bolt.new"
     >
-      {imageError ? (
-        <BoltSvg />
-      ) : (
-        <img 
-          src="/white_circle_360x360.png" 
-          alt="Powered by Bolt.new" 
-          className={`${sizeClasses[size]} rounded-full transition-all duration-300 hover:drop-shadow-lg`}
-          onError={handleImageError}
-        />
-      )}
+      <img 
+        src="/white_circle_360x360.png" 
+        alt="Powered by Bolt.new" 
+        className={`${sizeClasses[size]} rounded-full transition-all duration-300 hover:drop-shadow-lg`}
+      />
     </a>
   );
 }
